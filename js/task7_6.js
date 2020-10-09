@@ -1,5 +1,4 @@
-
-const validationInput = document.querySelector("validation-input");
+const validationInput = document.querySelector("#validation-input");
 console.log(inputValidation);
 
 inputValidation.addEventListener("focus", () => {
