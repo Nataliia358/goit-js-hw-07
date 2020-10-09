@@ -1,12 +1,28 @@
 const fontSizeRange = document.querySelector("#font-size-control");
 const spanText = document.querySelector("#text");
-const fontSizeChange = function () {
-    console.log (fontSizeRange.value);
-    spanText.style.fonSize = `${fontSizeRange.value}px`;
+
+function fontSizeChange() {
+    spanText.style.fontSize = `${fontSizeRange.value}px`;
 };
-spanText.style.fonSize = `${fontSizeRange.value}px`;
+
 fontSizeRange.addEventListener("input", fontSizeChange);
 
+
+/*const fontSizeRange = document.querySelector("#font-size-control");
+const spanText = document.querySelector("#text");
+
+fontSizeRange.addEventListener("input", () => {
+  spanText.style.fontSize = ${fontSizeRange.value}px;
+});
+
+/*const fontSizeRange = document.querySelector("#font-size-control");
+const spanText = document.querySelector("#text");
+const fontSizeChange = function () {
+    console.log (fontSizeRange.value);
+    spanText.style.fontSize = `${fontSizeRange.value}px`;
+};
+spanText.style.fontSize = `${fontSizeRange.value}px`;
+fontSizeRange.addEventListener("input", fontSizeChange);
 
 
 /*Напиши скрипт, который реагирует на изменение значения

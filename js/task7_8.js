@@ -1,4 +1,30 @@
+const [ input, buttonRender, buttonDestroy ] = document.querySelector("#controls").children;
 
+const container = document.querySelector("#boxes");
+
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i++) {
+    const div = document.createElement('div')
+    const sideSize = 30 + 10 * (i + 1);
+    div.style.height = `${sideSize}px`;
+    div.style.width = `${sideSize}px`;
+    div.style.backgroundColor = "red"
+
+    container.append(div)
+  }
+}
+
+function destroyBoxes() {
+  container.innerHTML = '';
+}
+
+buttonRender.addEventListener("click", () => { 
+  createBoxes(input.value);
+});
+
+buttonDestroy.addEventListener("click", () => { 
+  destroyBoxes();
+});
 
 
 
