@@ -7,6 +7,13 @@ if (!galleryEl) {
     return;
 }
 
+const imagesToDOM = () => {
+  return images.reduce((acc, {url, alt}) => {
+    acc +=`<li class = "${selector}_item"><img class = "${selector}_image" src = "${url} alt = "${alt}"/></li>`;
+    return acc;
+  }, "");
+}})
+
 
 const images = [
     {
@@ -29,13 +36,8 @@ const images = [
   galleryEl.classList.add(`${selector}`);
   galleryEl.insertAdjacentHTML(
       "afterbegin",
-      images.reduce((acc, {url, alt}) => {
-          acc +=`<li class="${selector}_item"><img class="${selector}_image" src="${url}" alt="${alt}"/></li>`;
-
-          return acc;
-    }, ''),
-  );
-}) ();
+      imagesToDOM,
+    );
 
   /*const imgEl = document.querySelector('#gallery');
 

@@ -1,10 +1,11 @@
 let counterValue = 0;
 
-const decrementBtn = document.querySelector("button[data-action='decrement']");
+const refSpanValue = document.querySelector("#value");
+const DecrementBtn = document.querySelector ("button[data-action='decrement']");
 const handleDecrementBtnClick = () => {
 counterValue -= 1;
 console.log(`Значение счетчика: ${counterValue}`);  
- document.querySelector("#value").textContent = counterValue;
+refSpanValue = counterValue;
 }
 
 decrementBtn.addEventListener('click', handleDecrementBtnClick);
@@ -13,10 +14,11 @@ const incrementBtn = document.querySelector("button[data-action='increment']");
 const handleIncrementBtnClick = () => {
  counterValue += 1;
  console.log(`Значение счетчика: ${counterValue}`);  
- document.querySelector("#value").textContent = counterValue;
+ refSpanValue = counterValue;
 }
 
-incrementBtn.addEventListener('click', handleIncrementBtnClick);counterValue -= 1;
+incrementBtn.addEventListener('click', handleIncrementBtnClick);
+counterValue -= 1;
 
 
 
